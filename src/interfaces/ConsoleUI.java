@@ -63,8 +63,6 @@ public class ConsoleUI {
 	 * 
 	 * @param options - Strings representing the menu options
 	 * @return the int of the selection made by the user
-	 * 
-	 * @deprecated
 	 */
 	public static int promptForMenuSelection(String[] options) {
 		return promptForMenuSelection(options, true);
@@ -77,8 +75,6 @@ public class ConsoleUI {
 	 * @param options - Strings representing the menu options
 	 * @param withQuit - adds option 0 for "quit" when true
 	 * @return the int of the selection made by the user
-	 * 
-	 * @deprecated
 	 */
 	public static int promptForMenuSelection(String[] options, boolean withQuit) {
 		return promptForMenuSelection(options, withQuit ? "Quit" : "");
@@ -91,8 +87,6 @@ public class ConsoleUI {
 	 * @param options - Strings representing the menu options
 	 * @param zeroOption - A string representing what the number 0 should say
 	 * @return the int of the selection made by the user
-	 * 
-	 * @deprecated
 	 */
 	public static int promptForMenuSelection(String[] options, String zeroOption) {
 		int choice;
