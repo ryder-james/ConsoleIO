@@ -44,14 +44,11 @@ public class ConsoleUI {
 	 */
 	public static <T extends MenuOption> T promptForMenuSelection(T[] options, String zeroOption) {
 		int choice;
-		for (int i = 0; i <= options.length; i++) {
-			if (i == 0) {
-				if (!zeroOption.isEmpty()) {
-					System.out.println(i + ")\t" + zeroOption);
-				}
-				continue;
-			}
+		for (int i = 1; i <= options.length; i++) {
 			System.out.println(i + ")\t" + options[i - 1].getDesc());
+		}
+		if (!zeroOption.isEmpty()) {
+			System.out.println("0)\t" + zeroOption);
 		}
 		choice = promptForInt("Select a menu option", zeroOption.isEmpty() ? 1 : 0, options.length);
 		return choice == 0 ? null : options[choice - 1];
@@ -89,21 +86,14 @@ public class ConsoleUI {
 	 * @return the int of the selection made by the user
 	 */
 	public static int promptForMenuSelection(String[] options, String zeroOption) {
-		int choice;
-
-		for (int i = 0; i <= options.length; i++) {
-			if (i == 0) {
-				if (!zeroOption.isEmpty()) {
-					System.out.println(i + ")\t" + zeroOption);
-				}
-				continue;
-			}
+		for (int i = 1; i <= options.length; i++) {
 			System.out.println(i + ")\t" + options[i - 1]);
 		}
 
-		choice = promptForInt("Select a menu option", zeroOption.isEmpty() ? 1 : 0, options.length);
-
-		return choice;
+		if (!zeroOption.isEmpty()) {
+			System.out.println("0)\t" + zeroOption);
+		}
+		return promptForInt("Select a menu option", zeroOption.isEmpty() ? 1 : 0, options.length);
 	}
 
 	/**
@@ -696,7 +686,7 @@ public class ConsoleUI {
 		String toParse;
 		double result;
 
-		if (min >= max) {
+		if (min > max) {
 			throw new IllegalArgumentException("Min must be less than max!");
 		}
 
