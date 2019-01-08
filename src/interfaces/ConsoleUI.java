@@ -7,10 +7,12 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Arrays;
 
+import models.IPType;
+import models.MenuOption;
+
 public class ConsoleUI {
 
-	private static final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-
+	
 	/**
 	 * Generates a console-based menu using the values in options as the menu items. Reserves the
 	 * number 0 for the "Quit" option.
@@ -591,7 +593,7 @@ public class ConsoleUI {
 	public static String promptForInput(String prompt, boolean allowEmpty) {
 		return promptForInput(prompt, allowEmpty, true);
 	}
-
+	
 	/**
 	 * Generates a prompt that allows the user to enter any response and returns the String. When
 	 * allowEmpty is true, empty responses are valid. When false, responses must contain at least
@@ -603,6 +605,7 @@ public class ConsoleUI {
 	 * @return the input from the user as a String
 	 */
 	public static String promptForInput(String prompt, boolean allowEmpty, boolean appendColon) {
+		final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String result;
 
 		if (prompt == null) {

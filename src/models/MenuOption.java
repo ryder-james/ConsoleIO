@@ -1,4 +1,6 @@
-package interfaces;
+package models;
+
+import interfaces.ConsoleUI;
 
 /**
  * A simple interface to allow enumerations (or, theoretically, any class) to pass to my
@@ -6,8 +8,11 @@ package interfaces;
  * 
  * @author Ryder James
  */
+@FunctionalInterface
 public interface MenuOption {
-
-	public String getDesc();
-
+	
+	/**
+	 * @return a simple description of this option to print to the user
+	 */
+	public abstract String getDesc();
 }
