@@ -53,6 +53,7 @@ public class ConsoleUI {
 			System.out.println("0)\t" + zeroOption);
 		}
 		choice = promptForInt("Select a menu option", zeroOption.isEmpty() ? 1 : 0, options.length);
+		System.out.println();
 		return choice == 0 ? null : options[choice - 1];
 	}
 
@@ -88,6 +89,8 @@ public class ConsoleUI {
 	 * @return the int of the selection made by the user
 	 */
 	public static int promptForMenuSelection(String[] options, String zeroOption) {
+		int result;
+		
 		for (int i = 1; i <= options.length; i++) {
 			System.out.println(i + ")\t" + options[i - 1]);
 		}
@@ -95,7 +98,10 @@ public class ConsoleUI {
 		if (!zeroOption.isEmpty()) {
 			System.out.println("0)\t" + zeroOption);
 		}
-		return promptForInt("Select a menu option", zeroOption.isEmpty() ? 1 : 0, options.length);
+		
+		result = promptForInt("Select a menu option", zeroOption.isEmpty() ? 1 : 0, options.length);
+		System.out.println();
+		return result;
 	}
 
 	/**

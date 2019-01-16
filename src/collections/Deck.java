@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Random;
 
-import interfaces.Card;
+import models.Card;
 
 /**
  * A deck for containing a list of cards
