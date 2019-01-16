@@ -1,6 +1,6 @@
-package models;
+package interfaces;
 
-import interfaces.ConsoleUI;
+import static_classes.ConsoleUI;
 
 /**
  * A simple interface to allow enumerations (or, theoretically, any class) to pass to my

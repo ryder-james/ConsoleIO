@@ -1,9 +1,11 @@
-package interfaces;
+package static_classes;
 
 import java.util.Random;
 
 public class StaticHelper {
 	private static final Random RAND = new Random();
+	
+	private StaticHelper() {}
 
 	public static int randomInt(int min, int max) {
 		if (max < min) {

@@ -1,4 +1,4 @@
-package interfaces;
+package static_classes;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,11 +7,14 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Arrays;
 
-import models.IPType;
-import models.MenuOption;
+import enums.IPType;
+import interfaces.MenuOption;
 
 public class ConsoleUI {
-
+	/**
+	 * Don't let anyone else instantiate this class
+	 */
+	private ConsoleUI() {}
 	
 	/**
 	 * Generates a console-based menu using the values in options as the menu items. Reserves the
