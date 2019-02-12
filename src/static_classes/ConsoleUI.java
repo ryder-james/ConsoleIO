@@ -633,6 +633,7 @@ public class ConsoleUI {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			result = result.trim();
 			if (!allowEmpty && result.isEmpty()) {
 				System.out.println("Input must not be empty!");
 				continue;
